@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCIS Security - Cyber Security & AI-Powered SOC Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #1e3a8a;
+            --accent-color: #3b82f6;
+            --text-color: #1f2937;
+            --light-bg: #f8fafc;
+            --gradient-start: #1e40af;
+            --gradient-end: #3b82f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .nav-container {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 6rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239BC6FC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .services {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .service-card p {
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.35);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <nav>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                SCIS SECURITY
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <div class="nav-links">
+                <a href="https://www.linkedin.com/company/scis-llc/" target="_blank">About</a>
+                <a href="#services">Services</a>
+                <a href="mailto:contact@scissecurity.com">Contact</a>
+                <a href="mailto:contact@scissecurity.com" class="btn">Request Demo</a>
+            </div>
+        </nav>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Full Security Stack Made Easy</h1>
+            <p>Expert Cyber Security Solutions</p>
+            <a href="mailto:contact@scissecurity.com" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h3>24/7 AI-Infused SOC Services</h3>
+            <p>Advanced network security visibility, correlation, triage, and remediation through our AI-powered Security Operations Center.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-users-cog"></i>
+            </div>
+            <h3>Cyber Consulting Services</h3>
+            <p>Comprehensive security solutions including strategy, architecture, and implementation guidance for your organization.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-shield-virus"></i>
+            </div>
+            <h3>Managed Security</h3>
+            <p>Advanced threat detection, AI-powered analytics, and expert incident response for complete cyber protection.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fab fa-github"></i>
+            </div>
+            <h3>Community Contributions</h3>
+            <p>Open-source security tools and research contributions. Check out our GitHub repository for cybersecurity resources and tools.</p>
+            <a href="https://github.com/dc401" target="_blank" class="btn" style="margin-top: 1rem;">
+                <i class="fab fa-github"></i> Visit Our GitHub
+            </a>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-book"></i>
+            </div>
+            <h3>Authored Publications</h3>
+            <p>Explore our comprehensive guide to implementing Detection as Code and automating security detection engineering workflows.</p>
+            <a href="https://www.amazon.com/dp/1837636419" target="_blank" class="btn" style="margin-top: 1rem;">
+                <i class="fas fa-book-open"></i> Read the Book
+            </a>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-pen-fancy"></i>
+            </div>
+            <h3>Security Blog</h3>
+            <p>Explore detailed technical write-ups, code examples, and walkthroughs covering both defensive and offensive security topics.</p>
+            <a href="https://dwchow.medium.com/" target="_blank" class="btn" style="margin-top: 1rem;">
+                <i class="fas fa-newspaper"></i> Read the Blog
+            </a>
+        </div>
+    </section>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
